@@ -40,7 +40,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Testing Capistrano Tasks'
+  task :testing_cap do
+    on roles(:app) do
+      puts 'Testing Capistrano Tasks'
+    end
+  end
+
   before :starting,     :check_revision
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
+  after  :finishing,    :testing_cap
 end
