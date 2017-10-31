@@ -43,7 +43,7 @@ namespace :deploy do
   desc 'Testing Capistrano Tasks'
   task :testing_cap do
     on roles(:app) do
-      puts "Testing Capistrano Tasks on #{__dir__}"
+      puts "Testing Capistrano Tasks on #{current_path}"
     end
   end
 
