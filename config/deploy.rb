@@ -43,7 +43,13 @@ namespace :deploy do
   desc 'Testing Capistrano Tasks'
   task :testing_cap do
     on roles(:app) do
+      # Execute on my computer
       puts "Testing Capistrano Tasks on #{current_path}"
+      # Execute inside the current path
+      within "#{current_path}" do
+        # Use the 'execute' command. It's important
+        execute 'pwd'
+      end
     end
   end
 
